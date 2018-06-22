@@ -9,12 +9,13 @@ const verify = crypto.createVerify('RSA-SHA1');
 var data = fs.readFileSync("message.txt");
 // loe public key millega signature kontrollida
 var pubKey = fs.readFileSync("public_key.pem");
-// ilma base64 signatuur
+// signatuur
 var sig = fs.readFileSync("signature.signed");
 // base64 signatuur
 var encSig = fs.readFileSync("signature.signed.base64");
 // decode signature tagasi base64-st
 var decodedSig = new Buffer(sig, 'base64');
+
 
 // INFO
 console.log("data is: " + data);
@@ -23,10 +24,13 @@ console.log("encSig (base64) is: " + encSig);
 console.log("sig is: " + sig);
 console.log("dec is: " + decodedSig);
 
-// mille signatuuri ma tsekin
-verify.update(data);
+if (x < 9)
+    for (var i = 0; i <= 9; i++;)
 
-// verify ise
+        // data mille signatuuri ma tsekin
+        verify.update(data);
+
+// verify 
 
 if (verify.verify(pubKey, decodedSig) === true) {
     console.log("HOORAY!");
