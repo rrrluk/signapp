@@ -24,11 +24,8 @@ console.log("encSig (base64) is: " + encSig);
 console.log("sig is: " + sig);
 console.log("dec is: " + decodedSig);
 
-if (x < 9)
-    for (var i = 0; i <= 9; i++;)
-
-        // data mille signatuuri ma tsekin
-        verify.update(data);
+// data mille signatuuri ma tsekin
+verify.update(data);
 
 // verify 
 
